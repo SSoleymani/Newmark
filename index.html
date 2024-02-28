@@ -523,9 +523,11 @@ extract the relevant property information.</p>
 <pre class="r"><code>content &lt;- content(response, &quot;parsed&quot;)
 prop_info &lt;- content$choices[[1]]$message$content
 cat(prop_info)</code></pre>
-<pre class="json"><code>{
-  &quot;Properties&quot;: [
-    {
+<p>Here is the structured information extracted from the provided text
+in a format ready to be parsed into a JSON object:</p>
+<pre class="json"><code>[
+  {
+    &quot;Property&quot;: {
       &quot;Address&quot;: &quot;1401 N Casaloma Dr, Appleton, WI&quot;,
       &quot;RentableArea&quot;: &quot;7,609 SF&quot;,
       &quot;NetOperatingIncome&quot;: &quot;$102,000&quot;,
@@ -537,63 +539,65 @@ cat(prop_info)</code></pre>
       &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
       &quot;TaxKey&quot;: &quot;101086805&quot;,
       &quot;Taxes2021&quot;: &quot;$12,099.79&quot;,
-      &quot;Municipality&quot;: &quot;Grand Chute&quot;,
-      &quot;LeasingDetails&quot;: {
-        &quot;AnnualBaseRent&quot;: &quot;$102,000 ($13.41PSF)&quot;,
-        &quot;CommonAreaMaintenance&quot;: &quot;Paid directly by Tenant&quot;,
-        &quot;Insurance&quot;: &quot;Paid directly by Tenant&quot;,
-        &quot;RealEstateTaxes&quot;: &quot;Reimbursed monthly by Tenant&quot;,
-        &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
-        &quot;BaseRentIncrease&quot;: &quot;$6,000 Annual Rent Increase Starting January 1st 2027&quot;,
-        &quot;Options&quot;: &quot;Three (3) - Three (3) Year Options with 3% Annual Increases&quot;,
-        &quot;Grantor&quot;: &quot;Brandon Fitness&quot;
-      },
-      &quot;Demographics&quot;: [
-        {
-          &quot;Scope&quot;: &quot;1 Mile&quot;,
-          &quot;Population&quot;: &quot;1,978&quot;,
-          &quot;Households&quot;: &quot;1,012&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$60,780&quot;,
-          &quot;Employees&quot;: &quot;10,285&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;3 Miles&quot;,
-          &quot;Population&quot;: &quot;39,799&quot;,
-          &quot;Households&quot;: &quot;17,050&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$60,050&quot;,
-          &quot;Employees&quot;: &quot;37,663&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;5 Miles&quot;,
-          &quot;Population&quot;: &quot;112,732&quot;,
-          &quot;Households&quot;: &quot;47,205&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$59,296&quot;,
-          &quot;Employees&quot;: &quot;82,484&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;5 Minutes&quot;,
-          &quot;Population&quot;: &quot;7,715&quot;,
-          &quot;Households&quot;: &quot;3,623&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$69,971&quot;,
-          &quot;Employees&quot;: &quot;21,473&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;10 Minutes&quot;,
-          &quot;Population&quot;: &quot;83,808&quot;,
-          &quot;Households&quot;: &quot;35,362&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$61,948&quot;,
-          &quot;Employees&quot;: &quot;75,045&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;15 Minutes&quot;,
-          &quot;Population&quot;: &quot;206,245&quot;,
-          &quot;Households&quot;: &quot;85,173&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$61,533&quot;,
-          &quot;Employees&quot;: &quot;137,747&quot;
-        }
-      ]
+      &quot;Municipality&quot;: &quot;Town of Grand Chute&quot;
     },
-    {
+    &quot;Leasing Details&quot;: {
+      &quot;AnnualBaseRent&quot;: &quot;$102,000&quot;,
+      &quot;CommonAreaMaintenance&quot;: &quot;Paid directly by Tenant&quot;,
+      &quot;Insurance&quot;: &quot;Paid directly by Tenant&quot;,
+      &quot;RealEstateTaxes&quot;: &quot;Reimbursed monthly by Tenant&quot;,
+      &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
+      &quot;BaseRentIncrease&quot;: &quot;$6,000 Annual Rent Increase Starting January 1st 2027&quot;,
+      &quot;Options&quot;: &quot;Three (3) - Three (3) Year Options with 3% Annual Increases&quot;,
+      &quot;Grantor&quot;: &quot;Brandon Fitness&quot;
+    },
+    &quot;Demographics&quot;: [
+      {
+        &quot;Range&quot;: &quot;1 Mile&quot;,
+        &quot;Population&quot;: &quot;1,978&quot;,
+        &quot;Households&quot;: &quot;1,012&quot;,
+        &quot;MedianHHInc&quot;: &quot;$60,780&quot;,
+        &quot;Employees&quot;: &quot;10,285&quot;
+      },
+      {
+        &quot;Range&quot;: &quot;3 Miles&quot;,
+        &quot;Population&quot;: &quot;39,799&quot;,
+        &quot;Households&quot;: &quot;17,050&quot;,
+        &quot;MedianHHInc&quot;: &quot;$60,050&quot;,
+        &quot;Employees&quot;: &quot;37,663&quot;
+      },
+      {
+        &quot;Range&quot;: &quot;5 Miles&quot;,
+        &quot;Population&quot;: &quot;112,732&quot;,
+        &quot;Households&quot;: &quot;47,205&quot;,
+        &quot;MedianHHInc&quot;: &quot;$59,296&quot;,
+        &quot;Employees&quot;: &quot;82,484&quot;
+      },
+      {
+        &quot;Range&quot;: &quot;5 Minutes&quot;,
+        &quot;Population&quot;: &quot;7,715&quot;,
+        &quot;Households&quot;: &quot;3,623&quot;,
+        &quot;MedianHHInc&quot;: &quot;$69,971&quot;,
+        &quot;Employees&quot;: &quot;21,473&quot;
+      },
+      {
+        &quot;Range&quot;: &quot;10 Minutes&quot;,
+        &quot;Population&quot;: &quot;83,808&quot;,
+        &quot;Households&quot;: &quot;35,362&quot;,
+        &quot;MedianHHInc&quot;: &quot;$61,948&quot;,
+        &quot;Employees&quot;: &quot;75,045&quot;
+      },
+      {
+        &quot;Range&quot;: &quot;15 Minutes&quot;,
+        &quot;Population&quot;: &quot;206,245&quot;,
+        &quot;Households&quot;: &quot;85,173&quot;,
+        &quot;MedianHHInc&quot;: &quot;$61,533&quot;,
+        &quot;Employees&quot;: &quot;137,747&quot;
+      }
+    ]
+  },
+  {
+    &quot;Property&quot;: {
       &quot;Address&quot;: &quot;W3171 Springfield Dr, Appleton, WI&quot;,
       &quot;RentableArea&quot;: &quot;6,528 SF&quot;,
       &quot;NetOperatingIncome&quot;: &quot;$102,000&quot;,
@@ -605,64 +609,66 @@ cat(prop_info)</code></pre>
       &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
       &quot;TaxKey&quot;: &quot;030264601&quot;,
       &quot;Taxes2021&quot;: &quot;$13,444.08&quot;,
-      &quot;Municipality&quot;: &quot;Town of Buchanan&quot;,
-      &quot;LeasingDetails&quot;: {
-        &quot;AnnualBaseRent&quot;: &quot;$102,000 ($15.63PSF)&quot;,
-        &quot;CommonAreaMaintenance&quot;: &quot;Paid directly by Tenant&quot;,
-        &quot;Insurance&quot;: &quot;Paid directly by Tenant&quot;,
-        &quot;RealEstateTaxes&quot;: &quot;Reimbursed monthly by Tenant&quot;,
-        &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
-        &quot;BaseRentIncrease&quot;: &quot;$6,000 Annual Rent Increase Starting January 1st 2027&quot;,
-        &quot;Options&quot;: &quot;Three (3) - Three (3) Year Options with 3% Annual Increases&quot;,
-        &quot;Grantor&quot;: &quot;Brandon Fitness&quot;
+      &quot;Municipality&quot;: &quot;Town of Buchanan&quot;
+    },
+    &quot;Leasing Details&quot;: {
+      &quot;AnnualBaseRent&quot;: &quot;$102,000&quot;,
+      &quot;CommonAreaMaintenance&quot;: &quot;Paid directly by Tenant&quot;,
+      &quot;Insurance&quot;: &quot;Paid directly by Tenant&quot;,
+      &quot;RealEstateTaxes&quot;: &quot;Reimbursed monthly by Tenant&quot;,
+      &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
+      &quot;BaseRentIncrease&quot;: &quot;$6,000 Annual Rent Increase Starting January 1st 2027&quot;,
+      &quot;Options&quot;: &quot;Three (3) - Three (3) Year Options with 3% Annual Increases&quot;,
+      &quot;Grantor&quot;: &quot;Brandon Fitness&quot;
+    },
+    &quot;Demographics&quot;: [
+      {
+        &quot;Range&quot;: &quot;1 Mile&quot;,
+        &quot;Population&quot;: &quot;6,002&quot;,
+        &quot;Households&quot;: &quot;2,237&quot;,
+        &quot;MedianHHInc&quot;: &quot;$84,176&quot;,
+        &quot;Employees&quot;: &quot;5,797&quot;
       },
-      &quot;Demographics&quot;: [
-        {
-          &quot;Scope&quot;: &quot;1 Mile&quot;,
-          &quot;Population&quot;: &quot;6,002&quot;,
-          &quot;Households&quot;: &quot;2,237&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$84,176&quot;,
-          &quot;Employees&quot;: &quot;5,797&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;3 Miles&quot;,
-          &quot;Population&quot;: &quot;65,605&quot;,
-          &quot;Households&quot;: &quot;25,244&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$66,012&quot;,
-          &quot;Employees&quot;: &quot;24,258&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;5 Miles&quot;,
-          &quot;Population&quot;: &quot;145,882&quot;,
-          &quot;Households&quot;: &quot;59,080&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$60,615&quot;,
-          &quot;Employees&quot;: &quot;74,795&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;5 Minutes&quot;,
-          &quot;Population&quot;: &quot;22,866&quot;,
-          &quot;Households&quot;: &quot;8,668&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$77,998&quot;,
-          &quot;Employees&quot;: &quot;8,604&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;10 Minutes&quot;,
-          &quot;Population&quot;: &quot;115,777&quot;,
-          &quot;Households&quot;: &quot;46,174&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$62,705&quot;,
-          &quot;Employees&quot;: &quot;59,831&quot;
-        },
-        {
-          &quot;Scope&quot;: &quot;15 Minutes&quot;,
-          &quot;Population&quot;: &quot;215,292&quot;,
-          &quot;Households&quot;: &quot;88,305&quot;,
-          &quot;MedianHHIncome&quot;: &quot;$61,957&quot;,
-          &quot;Employees&quot;: &quot;130,348&quot;
-        }
-      ]
-    }
-  ]
-}</code></pre>
+      {
+        &quot;Range&quot;: &quot;3 Miles&quot;,
+        &quot;Population&quot;: &quot;65,605&quot;,
+        &quot;Households&quot;: &quot;25,244&quot;,
+        &quot;MedianHHInc&quot;: &quot;$66,012&quot;,
+        &quot;Employees&quot;: &quot;24,258&quot;
+      },
+      {
+        &quot;Range&quot;: &quot;5 Miles&quot;,
+        &quot;Population&quot;: &quot;145,882&quot;,
+        &quot;Households&quot;: &quot;59,080&quot;,
+        &quot;MedianHHInc&quot;: &quot;$60,615&quot;,
+        &quot;Employees&quot;: &quot;74,795&quot;
+      },
+      {
+        &quot;Range&quot;: &quot;5 Minutes&quot;,
+        &quot;Population&quot;: &quot;22,866&quot;,
+        &quot;Households&quot;: &quot;8,668&quot;,
+        &quot;MedianHHInc&quot;: &quot;$77,998&quot;,
+        &quot;Employees&quot;: &quot;8,604&quot;
+      },
+      {
+        &quot;Range&quot;: &quot;10 Minutes&quot;,
+        &quot;Population&quot;: &quot;115,777&quot;,
+        &quot;Households&quot;: &quot;46,174&quot;,
+        &quot;MedianHHInc&quot;: &quot;$62,705&quot;,
+        &quot;Employees&quot;: &quot;59,831&quot;
+      },
+      {
+        &quot;Range&quot;: &quot;15 Minutes&quot;,
+        &quot;Population&quot;: &quot;215,292&quot;,
+        &quot;Households&quot;: &quot;88,305&quot;,
+        &quot;MedianHHInc&quot;: &quot;$61,957&quot;,
+        &quot;Employees&quot;: &quot;130,348&quot;
+      }
+    ]
+  }
+]</code></pre>
+<p>This JSON structure represents two separate properties with their
+respective details and demographic information.</p>
 <p>Finally, we save the extracted information as a JSON file.</p>
 <pre class="r"><code>jsonlite::write_json(prop_info, &quot;output.json&quot;)</code></pre>
 <p>You can download the <a href="output.json">extracted JSON file
@@ -737,6 +743,91 @@ result2 &lt;- content(response2, as = &quot;text&quot;, encoding = &quot;UTF-8&q
 <pre class="r"><code>content2 &lt;- content(response2, &quot;parsed&quot;)
 prop_info2 = content2$choices[[1]]$message$content
 cat(prop_info2)</code></pre>
+<pre class="json"><code>{
+  &quot;Property&quot;: {
+    &quot;Address&quot;: &quot;64 S Park Street, San Francisco, CA 94107&quot;,
+    &quot;RentableArea&quot;: &quot;410,000 SF&quot;,
+    &quot;NetOperatingIncome&quot;: null,
+    &quot;LandArea&quot;: &quot;0.5 Acres&quot;,
+    &quot;CapRate&quot;: null,
+    &quot;YearBuilt&quot;: &quot;2006&quot;,
+    &quot;SalePrice&quot;: &quot;$2,000,000&quot;,
+    &quot;Tenancy&quot;: &quot;Multiple&quot;,
+    &quot;ExpirationDate&quot;: null,
+    &quot;TaxKey&quot;: null,
+    &quot;Taxes2021&quot;: null,
+    &quot;Municipality&quot;: null
+  },
+  &quot;LeasingDetails&quot;: {
+    &quot;AnnualBaseRent&quot;: null,
+    &quot;CommonAreaMaintenance&quot;: null,
+    &quot;Insurance&quot;: &quot;$342,701&quot;,
+    &quot;RealEstateTaxes&quot;: &quot;$956,420&quot;,
+    &quot;ExpirationDate&quot;: null,
+    &quot;BaseRentIncrease&quot;: null,
+    &quot;Options&quot;: null,
+    &quot;Grantor&quot;: null
+  },
+  &quot;Demographics&quot;: {
+    &quot;1MILE&quot;: {
+      &quot;TotalPopulation&quot;: &quot;29,453&quot;,
+      &quot;MedianAge&quot;: &quot;41.0&quot;,
+      &quot;MedianAgeMale&quot;: &quot;40.0&quot;,
+      &quot;MedianAgeFemale&quot;: &quot;40.8&quot;,
+      &quot;TotalHouseholds&quot;: &quot;15,743&quot;,
+      &quot;TotalPersonsPerHH&quot;: &quot;1.9&quot;,
+      &quot;AverageHHIncome&quot;: &quot;$119,628&quot;,
+      &quot;AverageHouseValue&quot;: &quot;$809,515&quot;,
+      &quot;DemographicsDetails&quot;: {
+        &quot;White&quot;: &quot;49.0%&quot;,
+        &quot;Black&quot;: &quot;8.1%&quot;,
+        &quot;Asian&quot;: &quot;35.2%&quot;,
+        &quot;Hawaiian&quot;: &quot;0.5%&quot;,
+        &quot;AmericanIndian&quot;: &quot;0.4%&quot;,
+        &quot;Other&quot;: &quot;3.5%&quot;,
+        &quot;Hispanic&quot;: &quot;8.4%&quot;
+      }
+    },
+    &quot;2MILES&quot;: {
+      &quot;TotalPopulation&quot;: &quot;166,330&quot;,
+      &quot;MedianAge&quot;: &quot;41.1&quot;,
+      &quot;MedianAgeMale&quot;: &quot;41.1&quot;,
+      &quot;MedianAgeFemale&quot;: &quot;40.8&quot;,
+      &quot;TotalHouseholds&quot;: &quot;89,419&quot;,
+      &quot;TotalPersonsPerHH&quot;: &quot;1.9&quot;,
+      &quot;AverageHHIncome&quot;: &quot;$80,369&quot;,
+      &quot;AverageHouseValue&quot;: &quot;$811,596&quot;,
+      &quot;DemographicsDetails&quot;: {
+        &quot;White&quot;: &quot;46.7%&quot;,
+        &quot;Black&quot;: &quot;5.9%&quot;,
+        &quot;Asian&quot;: &quot;38.3%&quot;,
+        &quot;Hawaiian&quot;: &quot;0.4%&quot;,
+        &quot;AmericanIndian&quot;: &quot;0.7%&quot;,
+        &quot;Other&quot;: &quot;4.8%&quot;,
+        &quot;Hispanic&quot;: &quot;12.3%&quot;
+      }
+    },
+    &quot;3MILES&quot;: {
+      &quot;TotalPopulation&quot;: &quot;336,355&quot;,
+      &quot;MedianAge&quot;: &quot;38.8&quot;,
+      &quot;MedianAgeMale&quot;: &quot;38.8&quot;,
+      &quot;MedianAgeFemale&quot;: &quot;38.6&quot;,
+      &quot;TotalHouseholds&quot;: &quot;173,899&quot;,
+      &quot;TotalPersonsPerHH&quot;: &quot;1.9&quot;,
+      &quot;AverageHHIncome&quot;: &quot;$91,615&quot;,
+      &quot;AverageHouseValue&quot;: &quot;$838,553&quot;,
+      &quot;DemographicsDetails&quot;: {
+        &quot;White&quot;: &quot;57.3%&quot;,
+        &quot;Black&quot;: &quot;6.3%&quot;,
+        &quot;Asian&quot;: &quot;27.2%&quot;,
+        &quot;Hawaiian&quot;: &quot;0.3%&quot;,
+        &quot;AmericanIndian&quot;: &quot;0.6%&quot;,
+        &quot;Other&quot;: &quot;4.9%&quot;,
+        &quot;Hispanic&quot;: &quot;16.5%&quot;
+      }
+    }
+  }
+}</code></pre>
 <p>Finally, we save the extracted information as a JSON file.</p>
 <pre class="r"><code>jsonlite::write_json(prop_info2, &quot;output2.json&quot;)</code></pre>
 <p>You can download the <a href="output2.json">extracted JSON file</a>
