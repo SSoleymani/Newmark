@@ -523,49 +523,146 @@ extract the relevant property information.</p>
 <pre class="r"><code>content &lt;- content(response, &quot;parsed&quot;)
 prop_info &lt;- content$choices[[1]]$message$content
 cat(prop_info)</code></pre>
-<p>{ “Properties”: [ { “Address”: “1401 N Casaloma Dr, Appleton, WI”,
-“RentableArea”: “7609 SF”, “NetOperatingIncome”: “$102,000”, “LandArea”:
-“1.32 AC”, “CapRate”: “6.75%”, “YearBuilt”: “1975”, “SalePrice”:
-“$1,511,111”, “Tenancy”: “Single”, “ExpirationDate”: “12-31-2033”,
-“TaxKey”: “101086805”, “Taxes2021”: “$12,099.79”, “Municipality”: “Town
-of Grand Chute”, “LeasingDetails”: { “AnnualBaseRent”: “$102,000”,
-“CommonAreaMaintenance”: “Paid directly by Tenant”, “Insurance”: “Paid
-directly by Tenant”, “RealEstateTaxes”: “Reimbursed monthly by Tenant”,
-“BaseRentIncrease”: “$6,000 Annual Rent Increase Starting January 1st
-2027”, “Options”: “Three (3) - Three (3) Year Options with 3% Annual
-Increases”, “Grantor”: “Brandon Fitness” }, “Demographics”: [ { “Range”:
-“1 Mile”, “Population”: “1,978”, “Households”: “1,012”, “MedianHHInc”:
-“$60,780”, “Employees”: “10,285” }, { “Range”: “3 Miles”, “Population”:
-“39,799”, “Households”: “17,050”, “MedianHHInc”: “$60,050”, “Employees”:
-“37,663” }, { “Range”: “5 Miles”, “Population”: “112,732”, “Households”:
-“47,205”, “MedianHHInc”: “$59,296”, “Employees”: “82,484” }, { “Time”:
-“5 Minutes”, “Population”: “7,715”, “Households”: “3,623”,
-“MedianHHInc”: “$69,971”, “Employees”: “21,473” }, { “Time”: “10
-Minutes”, “Population”: “83,808”, “Households”: “35,362”, “MedianHHInc”:
-“$61,948”, “Employees”: “75,045” }, { “Time”: “15 Minutes”,
-“Population”: “206,245”, “Households”: “85,173”, “MedianHHInc”:
-“$61,533”, “Employees”: “137,747” } ] }, { “Address”: “W3171 Springfield
-Dr, Appleton, WI”, “RentableArea”: “6528 SF”, “NetOperatingIncome”:
-“$102,000”, “LandArea”: “0.72 AC”, “CapRate”: “6.75%”, “YearBuilt”:
-“2017”, “SalePrice”: “$1,511,111”, “Tenancy”: “Single”,
-“ExpirationDate”: “12-31-2033”, “TaxKey”: “030264601”, “Taxes2021”:
-“$13,444.08”, “Municipality”: “Town of Buchanan”, “LeasingDetails”: {
-“AnnualBaseRent”: “$102,000”, “CommonAreaMaintenance”: “Paid directly by
-Tenant”, “Insurance”: “Paid directly by Tenant”, “RealEstateTaxes”:
-“Reimbursed monthly by Tenant”, “BaseRentIncrease”: “$6,000 Annual Rent
-Increase Starting January 1st 2027”, “Options”: “Three (3) - Three (3)
-Year Options with 3% Annual Increases”, “Grantor”: “Brandon Fitness” },
-“Demographics”: [ { “Range”: “1 Mile”, “Population”: “6,002”,
-“Households”: “2,237”, “MedianHHInc”: “$84,176”, “Employees”: “5,797” },
-{ “Range”: “3 Miles”, “Population”: “65,605”, “Households”: “25,244”,
-“MedianHHInc”: “$66,012”, “Employees”: “24,258” }, { “Range”: “5 Miles”,
-“Population”: “145,882”, “Households”: “59,080”, “MedianHHInc”:
-“$60,615”, “Employees”: “74,795” }, { “Time”: “5 Minutes”, “Population”:
-“22,866”, “Households”: “8,668”, “MedianHHInc”: “$77,998”, “Employees”:
-“8,604” }, { “Time”: “10 Minutes”, “Population”: “115,777”,
-“Households”: “46,174”, “MedianHHInc”: “$62,705”, “Employees”: “59,831”
-}, { “Time”: “15 Minutes”, “Population”: “215,292”, “Households”:
-“88,305”, “MedianHHInc”: “$61,957”, “Employees”: “130,348” } ] } ] }</p>
+<pre class="json"><code>{
+  &quot;Properties&quot;: [
+    {
+      &quot;Address&quot;: &quot;1401 N Casaloma Dr, Appleton, WI&quot;,
+      &quot;RentableArea&quot;: &quot;7,609 SF&quot;,
+      &quot;NetOperatingIncome&quot;: &quot;$102,000&quot;,
+      &quot;LandArea&quot;: &quot;1.32 AC&quot;,
+      &quot;CapRate&quot;: &quot;6.75%&quot;,
+      &quot;YearBuilt&quot;: &quot;1975&quot;,
+      &quot;SalePrice&quot;: &quot;$1,511,111&quot;,
+      &quot;Tenancy&quot;: &quot;Single&quot;,
+      &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
+      &quot;TaxKey&quot;: &quot;101086805&quot;,
+      &quot;Taxes2021&quot;: &quot;$12,099.79&quot;,
+      &quot;Municipality&quot;: &quot;Grand Chute&quot;,
+      &quot;LeasingDetails&quot;: {
+        &quot;AnnualBaseRent&quot;: &quot;$102,000 ($13.41PSF)&quot;,
+        &quot;CommonAreaMaintenance&quot;: &quot;Paid directly by Tenant&quot;,
+        &quot;Insurance&quot;: &quot;Paid directly by Tenant&quot;,
+        &quot;RealEstateTaxes&quot;: &quot;Reimbursed monthly by Tenant&quot;,
+        &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
+        &quot;BaseRentIncrease&quot;: &quot;$6,000 Annual Rent Increase Starting January 1st 2027&quot;,
+        &quot;Options&quot;: &quot;Three (3) - Three (3) Year Options with 3% Annual Increases&quot;,
+        &quot;Grantor&quot;: &quot;Brandon Fitness&quot;
+      },
+      &quot;Demographics&quot;: [
+        {
+          &quot;Scope&quot;: &quot;1 Mile&quot;,
+          &quot;Population&quot;: &quot;1,978&quot;,
+          &quot;Households&quot;: &quot;1,012&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$60,780&quot;,
+          &quot;Employees&quot;: &quot;10,285&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;3 Miles&quot;,
+          &quot;Population&quot;: &quot;39,799&quot;,
+          &quot;Households&quot;: &quot;17,050&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$60,050&quot;,
+          &quot;Employees&quot;: &quot;37,663&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;5 Miles&quot;,
+          &quot;Population&quot;: &quot;112,732&quot;,
+          &quot;Households&quot;: &quot;47,205&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$59,296&quot;,
+          &quot;Employees&quot;: &quot;82,484&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;5 Minutes&quot;,
+          &quot;Population&quot;: &quot;7,715&quot;,
+          &quot;Households&quot;: &quot;3,623&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$69,971&quot;,
+          &quot;Employees&quot;: &quot;21,473&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;10 Minutes&quot;,
+          &quot;Population&quot;: &quot;83,808&quot;,
+          &quot;Households&quot;: &quot;35,362&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$61,948&quot;,
+          &quot;Employees&quot;: &quot;75,045&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;15 Minutes&quot;,
+          &quot;Population&quot;: &quot;206,245&quot;,
+          &quot;Households&quot;: &quot;85,173&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$61,533&quot;,
+          &quot;Employees&quot;: &quot;137,747&quot;
+        }
+      ]
+    },
+    {
+      &quot;Address&quot;: &quot;W3171 Springfield Dr, Appleton, WI&quot;,
+      &quot;RentableArea&quot;: &quot;6,528 SF&quot;,
+      &quot;NetOperatingIncome&quot;: &quot;$102,000&quot;,
+      &quot;LandArea&quot;: &quot;0.72 AC&quot;,
+      &quot;CapRate&quot;: &quot;6.75%&quot;,
+      &quot;YearBuilt&quot;: &quot;2017&quot;,
+      &quot;SalePrice&quot;: &quot;$1,511,111&quot;,
+      &quot;Tenancy&quot;: &quot;Single&quot;,
+      &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
+      &quot;TaxKey&quot;: &quot;030264601&quot;,
+      &quot;Taxes2021&quot;: &quot;$13,444.08&quot;,
+      &quot;Municipality&quot;: &quot;Town of Buchanan&quot;,
+      &quot;LeasingDetails&quot;: {
+        &quot;AnnualBaseRent&quot;: &quot;$102,000 ($15.63PSF)&quot;,
+        &quot;CommonAreaMaintenance&quot;: &quot;Paid directly by Tenant&quot;,
+        &quot;Insurance&quot;: &quot;Paid directly by Tenant&quot;,
+        &quot;RealEstateTaxes&quot;: &quot;Reimbursed monthly by Tenant&quot;,
+        &quot;ExpirationDate&quot;: &quot;12-31-2033&quot;,
+        &quot;BaseRentIncrease&quot;: &quot;$6,000 Annual Rent Increase Starting January 1st 2027&quot;,
+        &quot;Options&quot;: &quot;Three (3) - Three (3) Year Options with 3% Annual Increases&quot;,
+        &quot;Grantor&quot;: &quot;Brandon Fitness&quot;
+      },
+      &quot;Demographics&quot;: [
+        {
+          &quot;Scope&quot;: &quot;1 Mile&quot;,
+          &quot;Population&quot;: &quot;6,002&quot;,
+          &quot;Households&quot;: &quot;2,237&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$84,176&quot;,
+          &quot;Employees&quot;: &quot;5,797&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;3 Miles&quot;,
+          &quot;Population&quot;: &quot;65,605&quot;,
+          &quot;Households&quot;: &quot;25,244&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$66,012&quot;,
+          &quot;Employees&quot;: &quot;24,258&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;5 Miles&quot;,
+          &quot;Population&quot;: &quot;145,882&quot;,
+          &quot;Households&quot;: &quot;59,080&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$60,615&quot;,
+          &quot;Employees&quot;: &quot;74,795&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;5 Minutes&quot;,
+          &quot;Population&quot;: &quot;22,866&quot;,
+          &quot;Households&quot;: &quot;8,668&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$77,998&quot;,
+          &quot;Employees&quot;: &quot;8,604&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;10 Minutes&quot;,
+          &quot;Population&quot;: &quot;115,777&quot;,
+          &quot;Households&quot;: &quot;46,174&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$62,705&quot;,
+          &quot;Employees&quot;: &quot;59,831&quot;
+        },
+        {
+          &quot;Scope&quot;: &quot;15 Minutes&quot;,
+          &quot;Population&quot;: &quot;215,292&quot;,
+          &quot;Households&quot;: &quot;88,305&quot;,
+          &quot;MedianHHIncome&quot;: &quot;$61,957&quot;,
+          &quot;Employees&quot;: &quot;130,348&quot;
+        }
+      ]
+    }
+  ]
+}</code></pre>
 <p>Finally, we save the extracted information as a JSON file.</p>
 <pre class="r"><code>jsonlite::write_json(prop_info, &quot;output.json&quot;)</code></pre>
 <p>You can download the <a href="output.json">extracted JSON file
@@ -640,71 +737,10 @@ result2 &lt;- content(response2, as = &quot;text&quot;, encoding = &quot;UTF-8&q
 <pre class="r"><code>content2 &lt;- content(response2, &quot;parsed&quot;)
 prop_info2 = content2$choices[[1]]$message$content
 cat(prop_info2)</code></pre>
-<pre class="json"><code>{
-  &quot;Property&quot;: {
-    &quot;Address&quot;: &quot;64 S Park Street, San Francisco, CA 94107&quot;,
-    &quot;RentableArea&quot;: &quot;410,000 SF&quot;,
-    &quot;NetOperatingIncome&quot;: &quot;Not specified&quot;,
-    &quot;LandArea&quot;: &quot;0.5 Acres&quot;,
-    &quot;CapRate&quot;: &quot;Not specified&quot;,
-    &quot;YearBuilt&quot;: &quot;2006&quot;,
-    &quot;SalePrice&quot;: &quot;$2,000,000&quot;,
-    &quot;Tenancy&quot;: &quot;Multiple&quot;,
-    &quot;ExpirationDate&quot;: &quot;Not specified&quot;,
-    &quot;TaxKey&quot;: &quot;Not specified&quot;,
-    &quot;Taxes2021&quot;: &quot;Not specified&quot;,
-    &quot;Municipality&quot;: &quot;San Francisco&quot;
-  },
-  &quot;LeasingDetails&quot;: {
-    &quot;AnnualBaseRent&quot;: &quot;Not specified&quot;,
-    &quot;CommonAreaMaintenance&quot;: &quot;Not specified&quot;,
-    &quot;Insurance&quot;: &quot;Not specified&quot;,
-    &quot;RealEstateTaxes&quot;: &quot;Not specified&quot;,
-    &quot;ExpirationDate&quot;: &quot;Not specified&quot;,
-    &quot;BaseRentIncrease&quot;: &quot;Not specified&quot;,
-    &quot;Options&quot;: &quot;Not specified&quot;,
-    &quot;Grantor&quot;: &quot;Not specified&quot;
-  },
-  &quot;Demographics&quot;: {
-    &quot;1MILE&quot;: {
-      &quot;TotalPopulation&quot;: &quot;29,453&quot;,
-      &quot;MedianAge&quot;: &quot;41.0&quot;,
-      &quot;TotalHouseholds&quot;: &quot;15,743&quot;,
-      &quot;AverageHHIncome&quot;: &quot;$119,628&quot;,
-      &quot;AverageHouseValue&quot;: &quot;$809,515&quot;,
-      &quot;PercentWhite&quot;: &quot;49.0%&quot;,
-      &quot;PercentBlack&quot;: &quot;8.1%&quot;,
-      &quot;PercentAsian&quot;: &quot;35.2%&quot;,
-      &quot;PercentHispanic&quot;: &quot;8.4%&quot;
-    },
-    &quot;2MILES&quot;: {
-      &quot;TotalPopulation&quot;: &quot;166,330&quot;,
-      &quot;MedianAge&quot;: &quot;41.1&quot;,
-      &quot;TotalHouseholds&quot;: &quot;89,419&quot;,
-      &quot;AverageHHIncome&quot;: &quot;$80,369&quot;,
-      &quot;AverageHouseValue&quot;: &quot;$811,596&quot;,
-      &quot;PercentWhite&quot;: &quot;46.7%&quot;,
-      &quot;PercentBlack&quot;: &quot;5.9%&quot;,
-      &quot;PercentAsian&quot;: &quot;38.3%&quot;,
-      &quot;PercentHispanic&quot;: &quot;12.3%&quot;
-    },
-    &quot;3MILES&quot;: {
-      &quot;TotalPopulation&quot;: &quot;336,355&quot;,
-      &quot;MedianAge&quot;: &quot;38.8&quot;,
-      &quot;TotalHouseholds&quot;: &quot;173,899&quot;,
-      &quot;AverageHHIncome&quot;: &quot;$91,615&quot;,
-      &quot;AverageHouseValue&quot;: &quot;$838,553&quot;,
-      &quot;PercentWhite&quot;: &quot;57.3%&quot;,
-      &quot;PercentBlack&quot;: &quot;6.3%&quot;,
-      &quot;PercentAsian&quot;: &quot;27.2%&quot;,
-      &quot;PercentHispanic&quot;: &quot;16.5%&quot;
-    }
-  }
-}</code></pre>
 <p>Finally, we save the extracted information as a JSON file.</p>
-<pre class="r"><code>jsonlite::write_json(prop_info2, &quot;outpu2t.json&quot;)</code></pre>
-<p>You can download the <a href="output2.json">extracted JSON file of
-the second property here</a>.</p>
+<pre class="r"><code>jsonlite::write_json(prop_info2, &quot;output2.json&quot;)</code></pre>
+<p>You can download the <a href="output2.json">extracted JSON file</a>
+of the second property.</p>
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>

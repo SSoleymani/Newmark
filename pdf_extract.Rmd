@@ -49,7 +49,7 @@ text_content_json <- rjson::toJSON(text_content)
 We construct the request body and send it to the OpenAI API to extract structured information from the text.
 
 ```{r API_KEY, include=FALSE, eval=TRUE, echo=FALSE}
-YOUR_API_KEY = "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"
+YOUR_API_KEY = Sys.getenv("OpenAI_API_KEY")
 ```
 
 ```{r send-to-api, cache=TRUE}
@@ -120,7 +120,7 @@ In this section, we process a PDF that is not based on text but rather on scanne
 
 Similar to the previous section, we will use the **`pdftools`** library. However, since the PDF is more like a scanned picture, we will utilize the **`pdf_ocr_text`** function instead of **`pdf_text`** for text extraction:
 
-```{r read-second-pdf}
+```{r read-second-pdf, cache=TRUE}
 
 # Provide the path to the PDF file
 pdf_file_path2 <- "https://stgendev01.blob.core.windows.net/python-test/BOV.pdf"

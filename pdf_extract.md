@@ -103,11 +103,12 @@ prop_info <- content$choices[[1]]$message$content
 cat(prop_info)
 ```
 
+```json
 {
   "Properties": [
     {
       "Address": "1401 N Casaloma Dr, Appleton, WI",
-      "RentableArea": "7609 SF",
+      "RentableArea": "7,609 SF",
       "NetOperatingIncome": "$102,000",
       "LandArea": "1.32 AC",
       "CapRate": "6.75%",
@@ -117,64 +118,65 @@ cat(prop_info)
       "ExpirationDate": "12-31-2033",
       "TaxKey": "101086805",
       "Taxes2021": "$12,099.79",
-      "Municipality": "Town of Grand Chute",
+      "Municipality": "Grand Chute",
       "LeasingDetails": {
-        "AnnualBaseRent": "$102,000",
+        "AnnualBaseRent": "$102,000 ($13.41PSF)",
         "CommonAreaMaintenance": "Paid directly by Tenant",
         "Insurance": "Paid directly by Tenant",
         "RealEstateTaxes": "Reimbursed monthly by Tenant",
+        "ExpirationDate": "12-31-2033",
         "BaseRentIncrease": "$6,000 Annual Rent Increase Starting January 1st 2027",
         "Options": "Three (3) - Three (3) Year Options with 3% Annual Increases",
         "Grantor": "Brandon Fitness"
       },
       "Demographics": [
         {
-          "Range": "1 Mile",
+          "Scope": "1 Mile",
           "Population": "1,978",
           "Households": "1,012",
-          "MedianHHInc": "$60,780",
+          "MedianHHIncome": "$60,780",
           "Employees": "10,285"
         },
         {
-          "Range": "3 Miles",
+          "Scope": "3 Miles",
           "Population": "39,799",
           "Households": "17,050",
-          "MedianHHInc": "$60,050",
+          "MedianHHIncome": "$60,050",
           "Employees": "37,663"
         },
         {
-          "Range": "5 Miles",
+          "Scope": "5 Miles",
           "Population": "112,732",
           "Households": "47,205",
-          "MedianHHInc": "$59,296",
+          "MedianHHIncome": "$59,296",
           "Employees": "82,484"
         },
         {
-          "Time": "5 Minutes",
+          "Scope": "5 Minutes",
           "Population": "7,715",
           "Households": "3,623",
-          "MedianHHInc": "$69,971",
+          "MedianHHIncome": "$69,971",
           "Employees": "21,473"
         },
         {
-          "Time": "10 Minutes",
+          "Scope": "10 Minutes",
           "Population": "83,808",
           "Households": "35,362",
-          "MedianHHInc": "$61,948",
+          "MedianHHIncome": "$61,948",
           "Employees": "75,045"
         },
         {
-          "Time": "15 Minutes",
+          "Scope": "15 Minutes",
           "Population": "206,245",
           "Households": "85,173",
-          "MedianHHInc": "$61,533",
+          "MedianHHIncome": "$61,533",
           "Employees": "137,747"
         }
       ]
     },
     {
       "Address": "W3171 Springfield Dr, Appleton, WI",
-      "RentableArea": "6528 SF",
+      "RentableArea": "6,528 SF",
       "NetOperatingIncome": "$102,000",
       "LandArea": "0.72 AC",
       "CapRate": "6.75%",
@@ -186,61 +188,63 @@ cat(prop_info)
       "Taxes2021": "$13,444.08",
       "Municipality": "Town of Buchanan",
       "LeasingDetails": {
-        "AnnualBaseRent": "$102,000",
+        "AnnualBaseRent": "$102,000 ($15.63PSF)",
         "CommonAreaMaintenance": "Paid directly by Tenant",
         "Insurance": "Paid directly by Tenant",
         "RealEstateTaxes": "Reimbursed monthly by Tenant",
+        "ExpirationDate": "12-31-2033",
         "BaseRentIncrease": "$6,000 Annual Rent Increase Starting January 1st 2027",
         "Options": "Three (3) - Three (3) Year Options with 3% Annual Increases",
         "Grantor": "Brandon Fitness"
       },
       "Demographics": [
         {
-          "Range": "1 Mile",
+          "Scope": "1 Mile",
           "Population": "6,002",
           "Households": "2,237",
-          "MedianHHInc": "$84,176",
+          "MedianHHIncome": "$84,176",
           "Employees": "5,797"
         },
         {
-          "Range": "3 Miles",
+          "Scope": "3 Miles",
           "Population": "65,605",
           "Households": "25,244",
-          "MedianHHInc": "$66,012",
+          "MedianHHIncome": "$66,012",
           "Employees": "24,258"
         },
         {
-          "Range": "5 Miles",
+          "Scope": "5 Miles",
           "Population": "145,882",
           "Households": "59,080",
-          "MedianHHInc": "$60,615",
+          "MedianHHIncome": "$60,615",
           "Employees": "74,795"
         },
         {
-          "Time": "5 Minutes",
+          "Scope": "5 Minutes",
           "Population": "22,866",
           "Households": "8,668",
-          "MedianHHInc": "$77,998",
+          "MedianHHIncome": "$77,998",
           "Employees": "8,604"
         },
         {
-          "Time": "10 Minutes",
+          "Scope": "10 Minutes",
           "Population": "115,777",
           "Households": "46,174",
-          "MedianHHInc": "$62,705",
+          "MedianHHIncome": "$62,705",
           "Employees": "59,831"
         },
         {
-          "Time": "15 Minutes",
+          "Scope": "15 Minutes",
           "Population": "215,292",
           "Households": "88,305",
-          "MedianHHInc": "$61,957",
+          "MedianHHIncome": "$61,957",
           "Employees": "130,348"
         }
       ]
     }
   ]
 }
+```
 
 Finally, we save the extracted information as a JSON file.
 
@@ -332,78 +336,14 @@ prop_info2 = content2$choices[[1]]$message$content
 cat(prop_info2)
 ```
 
-```json
-{
-  "Property": {
-    "Address": "64 S Park Street, San Francisco, CA 94107",
-    "RentableArea": "410,000 SF",
-    "NetOperatingIncome": "Not specified",
-    "LandArea": "0.5 Acres",
-    "CapRate": "Not specified",
-    "YearBuilt": "2006",
-    "SalePrice": "$2,000,000",
-    "Tenancy": "Multiple",
-    "ExpirationDate": "Not specified",
-    "TaxKey": "Not specified",
-    "Taxes2021": "Not specified",
-    "Municipality": "San Francisco"
-  },
-  "LeasingDetails": {
-    "AnnualBaseRent": "Not specified",
-    "CommonAreaMaintenance": "Not specified",
-    "Insurance": "Not specified",
-    "RealEstateTaxes": "Not specified",
-    "ExpirationDate": "Not specified",
-    "BaseRentIncrease": "Not specified",
-    "Options": "Not specified",
-    "Grantor": "Not specified"
-  },
-  "Demographics": {
-    "1MILE": {
-      "TotalPopulation": "29,453",
-      "MedianAge": "41.0",
-      "TotalHouseholds": "15,743",
-      "AverageHHIncome": "$119,628",
-      "AverageHouseValue": "$809,515",
-      "PercentWhite": "49.0%",
-      "PercentBlack": "8.1%",
-      "PercentAsian": "35.2%",
-      "PercentHispanic": "8.4%"
-    },
-    "2MILES": {
-      "TotalPopulation": "166,330",
-      "MedianAge": "41.1",
-      "TotalHouseholds": "89,419",
-      "AverageHHIncome": "$80,369",
-      "AverageHouseValue": "$811,596",
-      "PercentWhite": "46.7%",
-      "PercentBlack": "5.9%",
-      "PercentAsian": "38.3%",
-      "PercentHispanic": "12.3%"
-    },
-    "3MILES": {
-      "TotalPopulation": "336,355",
-      "MedianAge": "38.8",
-      "TotalHouseholds": "173,899",
-      "AverageHHIncome": "$91,615",
-      "AverageHouseValue": "$838,553",
-      "PercentWhite": "57.3%",
-      "PercentBlack": "6.3%",
-      "PercentAsian": "27.2%",
-      "PercentHispanic": "16.5%"
-    }
-  }
-}
-```
-
 Finally, we save the extracted information as a JSON file.
 
 
 ```r
-jsonlite::write_json(prop_info2, "outpu2t.json")
+jsonlite::write_json(prop_info2, "output2.json")
 ```
 
-You can download the [extracted JSON file of the second property here](output2.json).
+You can download the [extracted JSON file](output2.json) of the second property.
 
 
 ## Conclusion
