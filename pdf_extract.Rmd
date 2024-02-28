@@ -1,9 +1,12 @@
 ---
 title: "Extracting and Processing Property Information from PDFs"
-output: 
-  html_document: 
-    code_folding: show
-    keep_md: true
+output:
+  prettydoc::html_pretty:
+    theme: bootstrap
+    highlight: github
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r setup, include=FALSE}
